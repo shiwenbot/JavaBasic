@@ -9,6 +9,14 @@ public class pass_by_value {
         actual value of a.
          */
         System.out.println(a);
+        System.out.println("------------------------------------");
+        /*
+        In this case, array[1] will change because it pass the address, and
+        the array in that address is changed by "change" method
+         */
+        int[] array = new int[]{1,2,3};
+        change(array);
+        System.out.println(array[1]);
     }
 
     /*
@@ -20,5 +28,11 @@ public class pass_by_value {
         System.out.println(a);
         a = 20;
         System.out.println(a);
+    }
+
+    public static void  change(int[] array){
+        System.out.println(array[1]);
+        array[1] = 10;
+        System.out.println(array[1]);
     }
 }
